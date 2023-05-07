@@ -5,15 +5,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- link para ir buscar o icon das barras pequenas  -->
+        <!-- link to get the small bars icon  -->
         <link rel="stylesheet"
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!-- link do css da pagina home -->
+        <!-- link to the css of the home page -->
         <link rel="stylesheet" href="topnav.css">
-        <link rel="stylesheet" href="orcamentos.css">
+        <link rel="stylesheet" href="budget.css">
 
         <div class="topnav" id="homeTopnav">
-                <a class="active" href="orcamentos.html">Budgets</a>
+                <a class="active" href="budget.html">Budgets</a>
                 <a href="home.html">My Finances</a>
                 <a href="expenses.html">Expenses</a>
                 <a href="javascript:void(0);" class="icon" onclick="barFunction()">
@@ -25,13 +25,13 @@
 
 <body>
 
-        <!-- Menu de botões collapse -->
+        <!-- Collapse button menu -->
         <div class="divCenterItems">
                 <div class="divCalender" id="calendar">
                         <input class="calender" type="month" id="date" min="2019-12">
                 </div>
 
-                <!-- Alimentação -->
+                <!-- Food -->
                 <button type="button" class="collapsible">
                         <span class="cardTitle">Food</span>
                         <i class="fas fa-utensils cardIcon"></i>
@@ -51,10 +51,14 @@
                         </div>
                 </div>
 
-                <!-- Habitação -->
+                <!-- Housing -->
                 <button type="button" class="collapsible">
+<<<<<<< HEAD:orcamentos.html
                         <span class="cardTitle">
                                 Housing</span>
+=======
+                        <span class="cardTitle">Housing</span>
+>>>>>>> 67ab74e99c4c79b08f1b58bee997151e6eba1714:budget.html
                         <i class="fas fa-home cardIcon"></i>
                 </button>
 
@@ -92,9 +96,9 @@
                         </div>
                 </div>
 
-                <!-- Saúde -->
+                <!-- Health -->
                 <button type="button" class="collapsible">
-                        <span class="cardTitle">Saúde</span>
+                        <span class="cardTitle">Health</span>
                         <i class="fas fa-heartbeat cardIcon"></i>
                 </button>
 
@@ -113,13 +117,14 @@
                         </div>
                 </div>
 
-                <!-- Veículo -->
+                <!-- Vehicle -->
                 <button type="button" class="collapsible">
-                        <span class="cardTitle">Veículo</span>
+                        <span class="cardTitle">Vehicle</span>
                         <i class="fas fa-car cardIcon"></i>
                 </button>
 
                 <div class="content">
+<<<<<<< HEAD:orcamentos.html
                         <div>
                                 Budget<i class="fas fa-arrow-right"></i>
                                 <input type="number" value="0" class="budgetInCollapsible" id="vehicleBudget"
@@ -127,6 +132,13 @@
                         </div>
                         <div>
                                 Current Spending <i class="fas fa-arrow-right"></i>
+=======
+                        <div>Budget <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="vehicleBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Current Spending <i class="fas fa-arrow-right"></i>
+>>>>>>> 67ab74e99c4c79b08f1b58bee997151e6eba1714:budget.html
                                 <input disabled type="number" value="0" class="disabledInputExpenses" id="vehicle"
                                         onfocus="this.value=''"></input>
                                 <span class="boldSlash">/</span>
@@ -142,8 +154,12 @@
                 </button>
 
                 <div class="content">
+<<<<<<< HEAD:orcamentos.html
                         <div class="divTotal">
                                 Total Expense <i class="fas fa-arrow-right"></i>
+=======
+                        <div class="divTotal">Current Spending Total <i class="fas fa-arrow-right"></i>
+>>>>>>> 67ab74e99c4c79b08f1b58bee997151e6eba1714:budget.html
                                 <input class="disabledInputExpenses" disabled value="0" id="totalActual"></input>
                                 <span class="boldSlash">/</span>
                                 <input class="disabledInputBudgets" disabled id="totalMaxBudget"></label>
@@ -154,14 +170,18 @@
 
         <!-- Save Button -->
         <div class="divSaveButton">
+<<<<<<< HEAD:orcamentos.html
                 <button class="saveButton">
                         Save</button>
+=======
+                <button class="saveButton">Save</button>
+>>>>>>> 67ab74e99c4c79b08f1b58bee997151e6eba1714:budget.html
         </div>
 
         <!-- Links JS -->
         <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
         <script src="topnav.js"></script>
-        <script src="orcamentos.js"></script>
+        <script src="budget.js"></script>
 </body>
 
 </html>

@@ -1,9 +1,10 @@
-// Varáveis globais
-// Variável que soma o gasto atual
+// global variables
+// Variable that sums the current expense
 let sum = 0
 let totalMoney = 0
 
-// Função para os botões collapse
+
+// Function for collapse buttons
 let coll = document.getElementsByClassName("collapsible");
 let i;
 for (i = 0; i < coll.length; i++) {
@@ -18,10 +19,11 @@ for (i = 0; i < coll.length; i++) {
   })
 }
 
-// Coloca a data com o mês/ano atual
+
+// Put the date with the current month/year
 document.querySelector("#date").valueAsDate = new Date();
 
-// Leitura dos dados do localStorage do saldo; se não existir é atribuido o valor de 0 à variável
+// Reading the balance's localStorage data; if it does not exist, the value of 0 is assigned to the variable
 let compareDate = document.querySelector("#date").value
 if (localStorage.getItem('money')) {
   money = JSON.parse(localStorage.getItem('money'))
@@ -29,7 +31,7 @@ if (localStorage.getItem('money')) {
   money = 0
 }
 
-// Leitura do localStorage das despesas; é comparado se a data selecionada existe nas despesas; se existir é carregado senão é atribuido um array vazio
+// Expenses localStorage reading; it is compared if the selected date exists in the expenses; if it exists it is loaded otherwise an empty array is assigned
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -65,64 +67,70 @@ if (localStorage.getItem('expenses')) {
   expenses = []
 }
 
-// Botão para guardar despesas
+
+//Button to save expenses
 saveButton.addEventListener("click", function () {
 
-  // Cálculo da alimentação geral
+//Calculation of general power
   let generalFood = +document.querySelector("#geneFood").value
   let actF = +document.querySelector("#actualFood").value
   sum = actF + generalFood
   document.querySelector("#actualFood").value = sum
 
-  // Cálculo dos gastos em restaurante
+  // Calculation of restaurant expenses
   let awayFood = +document.querySelector("#awayFood").value
   let actAFood = +document.querySelector("#actualAwayFood").value
   sum = actAFood + awayFood
   document.querySelector("#actualAwayFood").value = sum
 
-  // Cálculo dos gastos em cinema
+ 
+// Calculation of cinema expenses
   let movies = +document.querySelector("#cinema").value
   let actMovies = +document.querySelector("#actualCin").value
   sum = actMovies + movies
   document.querySelector("#actualCin").value = sum
 
-  // Cálculo gastos desporto
+  // Calculation of sports expenses
   let sports = +document.querySelector("#sport").value
   let actSports = +document.querySelector("#actualSport").value
   sum = actSports + sports
   document.querySelector("#actualSport").value = sum
 
-  // Cálculo gastos ginásio
+ // Gym cost calculation
   let gym = +document.querySelector("#gym").value
   let actGym = +document.querySelector("#actualGym").value
   sum = actGym + gym
   document.querySelector("#actualGym").value = sum
 
-  // Cálculo gastos de saídas
+ 
+// Calculation of outgoing expenses
   let nightOut = +document.querySelector("#nightOut").value
   let actOut = +document.querySelector("#actualOut").value
   sum = actOut + nightOut
   document.querySelector("#actualOut").value = sum
 
-  // Cálculo gastos em viagens
+  
+// Calculation of travel expenses
   let trip = +document.querySelector("#trip").value
   let actTrip = +document.querySelector("#actualTrip").value
   sum = actTrip + trip
   document.querySelector("#actualTrip").value = sum
 
-  // Cálculo dos gastos em luz
+  
+// Calculation of electricity expenses
   let elect = +document.querySelector("#elect").value
   let actElect = +document.querySelector("#actualElect").value
   sum = actElect + elect
   document.querySelector("#actualElect").value = sum
 
-  // Cálculo gastos em água
+  // Calculation of water costs
   let water = +document.querySelector("#water").value
   let actWater = +document.querySelector("#actualWater").value
   sum = actWater + water
   document.querySelector("#actualWater").value = sum
 
-  // Cálculo gastos em renda
+  
+// Calculation of income expenses
   let rent = +document.querySelector("#rent").value
   let actInc = +document.querySelector("#actualRent").value
   sum = actInc + rent
@@ -134,49 +142,53 @@ saveButton.addEventListener("click", function () {
   sum = actNet + net
   document.querySelector("#actualNet").value = sum
 
-  // Cálculo de outros gastos 
+  // Calculation of other expenses
   let otherPay = +document.querySelector("#otherPay").value
   let actOther = +document.querySelector("#actualOtherPay").value
   sum = actOther + otherPay
   document.querySelector("#actualOtherPay").value = sum
 
-  // Cálculo de gastos em farmácia
+  // Calculation of expenses in pharmacy
   let pharm = +document.querySelector("#pharm").value
   let actualPharm = +document.querySelector("#actualPharm").value
   sum = actualPharm + pharm
   document.querySelector("#actualPharm").value = sum
 
-  // Cálculo dos gastos em consultas
+  // Calculation of expenses in queries
   let doctor = +document.querySelector("#doctor").value
   let actualDoctor = +document.querySelector("#actualDoctor").value
   sum = actualDoctor + doctor
   document.querySelector("#actualDoctor").value = sum
 
-  // Cálculo de outros gastos na saúde
+  
+// Calculation of other health expenses
   let otherHealth = +document.querySelector("#otherHealth").value
   let actualOtherHealth = +document.querySelector("#actualOtherHealth").value
   sum = actualOtherHealth + otherHealth
   document.querySelector("#actualOtherHealth").value = sum
 
-  // Cálculo do combustível
+  // Fuel calculation
   let fuel = +document.querySelector("#fuel").value
   let actualFuel = +document.querySelector("#actualFuel").value
   sum = actualFuel + fuel
   document.querySelector("#actualFuel").value = sum
 
-  // Cálculo dos gastos em manutenção
+  
+// Calculation of maintenance expenses
   let maintenance = +document.querySelector("#maintenance").value
   let actualMaintenance = +document.querySelector("#actualMaintenance").value
   sum = actualMaintenance + maintenance
   document.querySelector("#actualMaintenance").value = sum
 
-  // Cálculo dos gastos em seguro
+  
+// Calculation of insurance expenses
   let insurance = +document.querySelector("#insurance").value
   let actualInsurance = +document.querySelector("#actualInsurance").value
   sum = actualInsurance + insurance
   document.querySelector("#actualInsurance").value = sum
 
-  // Cálculo dos gastos em multas
+  
+// Calculation of expenses on fines
   let carFine = +document.querySelector("#carFine").value
   let actualCarFine = +document.querySelector("#actualCarFine").value
   sum = actualCarFine + carFine
@@ -186,7 +198,7 @@ saveButton.addEventListener("click", function () {
   let savedItem;
   let compareDate = document.querySelector("#date").value;
 
-  // Ciclo que compara se a data escolhida já existe no localstorage; se existir substitui os dados, senão cria uns novos
+  // Cycle that compares if the chosen date already exists in localstorage; if it exists, replace the data, otherwise create new ones
   for (let i = 0; i < expenses.length; i++) {
     savedItem = expenses[i];
 
@@ -207,7 +219,7 @@ saveButton.addEventListener("click", function () {
   location.reload();
 })
 
-// Função que guarda os valores no localstorage, se a data não existir é criado uma lista de despesas nova
+// Function that stores the values ​​in localstorage, if the date does not exist a new list of expenses is created
 function saveItem(savedItem, foundDate = true) {
   savedItem.date = document.querySelector("#date").value;
   savedItem.generalFood = +document.querySelector("#actualFood").value
@@ -237,7 +249,7 @@ function saveItem(savedItem, foundDate = true) {
   localStorage.setItem("expenses", JSON.stringify(expenses))
 }
 
-// Função que vai meter os inputs todos a zero se nao existir a data no localstorage
+// Function that will set all inputs to zero if the date does not exist in localstorage
 function resetValues() {
   let elements = document.querySelectorAll("input[type=number]")
 
@@ -246,7 +258,7 @@ function resetValues() {
   }
 }
 
-// Função para ler os dados no localstorage
+// Function to read data from localstorage
 function loadData(savedItem) {
   document.getElementById("actualFood").value = savedItem.generalFood
   document.querySelector("#actualAwayFood").value = savedItem.restaurant
@@ -270,7 +282,7 @@ function loadData(savedItem) {
 }
 let dataPick = document.getElementById("date");
 
-// Função que: ou mete os valores dos inputs a zero, ou lê os dados do localstorage caso existam
+// Function that: either sets the values ​​of the inputs to zero, or reads the data from localstorage if they exist
 dataPick.onchange = function () {
 
   let foundDate = false;
