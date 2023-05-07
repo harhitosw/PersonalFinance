@@ -1,9 +1,10 @@
-// Varáveis globais
-// Variável que soma o gasto atual
+// global variables
+// Variable that sums the current expense
 let sum = 0
 let totalMoney = 0
 
-// Função para os botões collapse
+
+// Function for collapse buttons
 let coll = document.getElementsByClassName("collapsible");
 let i;
 for (i = 0; i < coll.length; i++) {
@@ -18,10 +19,11 @@ for (i = 0; i < coll.length; i++) {
   })
 }
 
-// Coloca a data com o mês/ano atual
+
+// Put the date with the current month/year
 document.querySelector("#date").valueAsDate = new Date();
 
-// Leitura dos dados do localStorage do saldo; se não existir é atribuido o valor de 0 à variável
+// Reading the balance's localStorage data; if it does not exist, the value of 0 is assigned to the variable
 let compareDate = document.querySelector("#date").value
 if (localStorage.getItem('money')) {
   money = JSON.parse(localStorage.getItem('money'))
@@ -29,7 +31,7 @@ if (localStorage.getItem('money')) {
   money = 0
 }
 
-// Leitura do localStorage das despesas; é comparado se a data selecionada existe nas despesas; se existir é carregado senão é atribuido um array vazio
+// Expenses localStorage reading; it is compared if the selected date exists in the expenses; if it exists it is loaded otherwise an empty array is assigned
 let expenses = [];
 if (localStorage.getItem('expenses')) {
   expenses = JSON.parse(localStorage.getItem('expenses'))
@@ -65,64 +67,70 @@ if (localStorage.getItem('expenses')) {
   expenses = []
 }
 
-// Botão para guardar despesas
+
+//Button to save expenses
 saveButton.addEventListener("click", function () {
 
-  // Cálculo da alimentação geral
+//Calculation of general power
   let generalFood = +document.querySelector("#geneFood").value
   let actF = +document.querySelector("#actualFood").value
   sum = actF + generalFood
   document.querySelector("#actualFood").value = sum
 
-  // Cálculo dos gastos em restaurante
+  // Calculation of restaurant expenses
   let awayFood = +document.querySelector("#awayFood").value
   let actAFood = +document.querySelector("#actualAwayFood").value
   sum = actAFood + awayFood
   document.querySelector("#actualAwayFood").value = sum
 
-  // Cálculo dos gastos em cinema
+ 
+// Calculation of cinema expenses
   let movies = +document.querySelector("#cinema").value
   let actMovies = +document.querySelector("#actualCin").value
   sum = actMovies + movies
   document.querySelector("#actualCin").value = sum
 
-  // Cálculo gastos desporto
+  // Calculation of sports expenses
   let sports = +document.querySelector("#sport").value
   let actSports = +document.querySelector("#actualSport").value
   sum = actSports + sports
   document.querySelector("#actualSport").value = sum
 
-  // Cálculo gastos ginásio
+ // Gym cost calculation
   let gym = +document.querySelector("#gym").value
   let actGym = +document.querySelector("#actualGym").value
   sum = actGym + gym
   document.querySelector("#actualGym").value = sum
 
-  // Cálculo gastos de saídas
+ 
+// Calculation of outgoing expenses
   let nightOut = +document.querySelector("#nightOut").value
   let actOut = +document.querySelector("#actualOut").value
   sum = actOut + nightOut
   document.querySelector("#actualOut").value = sum
 
-  // Cálculo gastos em viagens
+  
+// Calculation of travel expenses
   let trip = +document.querySelector("#trip").value
   let actTrip = +document.querySelector("#actualTrip").value
   sum = actTrip + trip
   document.querySelector("#actualTrip").value = sum
 
-  // Cálculo dos gastos em luz
+  
+// Calculation of electricity expenses
   let elect = +document.querySelector("#elect").value
   let actElect = +document.querySelector("#actualElect").value
   sum = actElect + elect
   document.querySelector("#actualElect").value = sum
 
-  // Cálculo gastos em água
+  // Calculation of water costs
   let water = +document.querySelector("#water").value
   let actWater = +document.querySelector("#actualWater").value
   sum = actWater + water
   document.querySelector("#actualWater").value = sum
 
-  // Cálculo gastos em renda
+  
+// Calculation of income expenses
   let rent = +document.querySelector("#rent").value
   let actInc = +document.querySelector("#actualRent").value
   sum = actInc + rent
