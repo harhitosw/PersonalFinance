@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- link para ir buscar o icon das barras pequenas  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- link do css da pagina home -->
+    <link rel="stylesheet" href="topnav.css">
+    <link rel="stylesheet" href="expenses.css">
+
+    <div class="topnav" id="homeTopnav">
+        <a class="active" href="expenses.html">Despesas</a>
+        <a href="home.html">Minhas Finanças</a>
+        <a href="orcamentos.html">Orçamentos</a>
+        <a href="javascript:void(0);" class="icon" onclick="barFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    <title>Minhas Finanças</title>
+</head>
+
+<body>
+
+    <!-- Menu de botões collapse -->
+    <div class="divCenterItems">
+        <div class="divCalender" id="calendar">
+            <input class="calender" type="month" id="date" min="2020-01"></input>
+        </div>
+
+        <!-- Alimentação -->
+        <button type="button" class="collapsible">
+            <span class="cardTitle">Alimentação</span>
+            <i class="fas fa-utensils cardIcon"></i>
+        </button>
+
+        <div class="content">
+            <div>Alimentação Geral
+                <input type="number" value="0" class="actualExpense" id="geneFood" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualFood" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Restaurantes
+                <input type="number" value="0" class="actualExpense" id="awayFood" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualAwayFood" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+        </div>
+
+        <!-- Habitação -->
+        <button type="button" class="collapsible">
+            <span class="cardTitle">Habitação</span>
+            <i class="fas fa-home cardIcon"></i>
+        </button>
+
+        <div class="content">
+            <div>Eletricidade
+                <input type="number" value="0" class="actualExpense" id="elect" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualElect" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Água
+                <input type="number" value="0" class="actualExpense" id="water" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualWater" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Renda
+                <input type="number" value="0" class="actualExpense" id="rent" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualRent" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Internet
+                <input type="number" value="0" class="actualExpense" id="net" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualNet" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Outros Impostos
+                <input type="number" value="0" class="actualExpense" id="otherPay" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualOtherPay" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+        </div>
+
+        <!-- Lazer -->
+        <button type="button" class="collapsible">
+            <span class="cardTitle">Lazer</span>
+            <i class="fas fa-glass-martini-alt cardIcon"></i>
+        </button>
+
+        <div class="content">
+            <div>Cinema
+                <input type="number" value="0" class="actualExpense" id="cinema" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualCin" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Eventos
+                <input type="number" value="0" class="actualExpense" id="sport" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualSport" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Ginásio
+                <input type="number" value="0" class="actualExpense" id="gym" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualGym" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Saídas à noite
+                <input type="number" value="0" class="actualExpense" id="nightOut" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualOut" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Viagens / Hotéis
+                <input type="number" value="0" class="actualExpense" id="trip" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualTrip" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+        </div>
+
+        <!-- Saúde -->
+        <button type="button" class="collapsible">
+            <span class="cardTitle">Saúde</span>
+            <i class="fas fa-heartbeat cardIcon"></i>
+        </button>
+
+        <div class="content">
+            <div>Farmácia
+                <input type="number" value="0" class="actualExpense" id="pharm" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualPharm" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Consultas
+                <input type="number" value="0" class="actualExpense" id="doctor" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualDoctor" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+
+            <div>Outras Despesas
+                <input type="number" value="0" class="actualExpense" id="otherHealth" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualOtherHealth" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+        </div>
+
+        <!-- Veículo -->
+        <button type="button" class="collapsible">
+            <span class="cardTitle">Veículo</span>
+            <i class="fas fa-car cardIcon"></i>
+        </button>
+
+        <div class="content">
+            <div>Combustível
+                <input type="number" value="0" class="actualExpense" id="fuel" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualFuel" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Manutenção
+                <input type="number" value="0" class="actualExpense" id="maintenance" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualMaintenance" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Seguro
+                <input type="number" value="0" class="actualExpense" id="insurance" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualInsurance" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+            <div>Multas
+                <input type="number" value="0" class="actualExpense" id="carFine" onfocus="this.value=''"></input><i
+                    class="fas fa-arrow-right"></i>
+                <input type="number" class="disabledInput" id="actualCarFine" value="0" disabled><i
+                    class="fas fa-money-bill-wave"></i></input>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Guardar -->
+    <div class="divSaveButton">
+        <button class="saveButton" id="saveButton">Guardar</button>
+    </div>
+
+    <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
+    <script src="topnav.js"></script>
+    <script src="expenses.js"></script>
+</body>
+
+</html>

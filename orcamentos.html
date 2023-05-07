@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- link para ir buscar o icon das barras pequenas  -->
+        <link rel="stylesheet"
+                href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- link do css da pagina home -->
+        <link rel="stylesheet" href="topnav.css">
+        <link rel="stylesheet" href="orcamentos.css">
+
+        <div class="topnav" id="homeTopnav">
+                <a class="active" href="orcamentos.html">Budgets</a>
+                <a href="home.html">My Finances</a>
+                <a href="expenses.html">Expenses</a>
+                <a href="javascript:void(0);" class="icon" onclick="barFunction()">
+                        <i class="fa fa-bars"></i>
+                </a>
+        </div>
+        <title>My Finances</title>
+</head>
+
+<body>
+
+        <!-- Menu de botões collapse -->
+        <div class="divCenterItems">
+                <div class="divCalender" id="calendar">
+                        <input class="calender" type="month" id="date" min="2019-12">
+                </div>
+
+                <!-- Alimentação -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Food</span>
+                        <i class="fas fa-utensils cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Budget <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="foodBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="food"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="foodMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Habitação -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Habitação</span>
+                        <i class="fas fa-home cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Budget <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="homeBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Current Spending <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="home"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="homeMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Lazer -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Lazer</span>
+                        <i class="fas fa-glass-martini-alt cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Budget <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="entertainmentBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Current Spending <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="entertainment"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="entertainmentMaxBudget"
+                                        value="0"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Saúde -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Saúde</span>
+                        <i class="fas fa-heartbeat cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Current Budget <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="healthBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="health"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="healthMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Veículo -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Veículo</span>
+                        <i class="fas fa-car cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div>Orçamento <i class="fas fa-arrow-right"></i>
+                                <input type="number" value="0" class="budgetInCollapsible" id="vehicleBudget"
+                                        onfocus="this.value=''"></input><i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div>Gasto Atual <i class="fas fa-arrow-right"></i>
+                                <input disabled type="number" value="0" class="disabledInputExpenses" id="vehicle"
+                                        onfocus="this.value=''"></input>
+                                <span class="boldSlash">/</span>
+                                <input disabled class="disabledInputBudgets" id="vehicleMaxBudget" value="0"></input><i
+                                        class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+
+                <!-- Total -->
+                <button type="button" class="collapsible">
+                        <span class="cardTitle">Total</span>
+                        <i class="fas fa-clipboard-list cardIcon"></i>
+                </button>
+
+                <div class="content">
+                        <div class="divTotal">Gasto Total <i class="fas fa-arrow-right"></i>
+                                <input class="disabledInputExpenses" disabled value="0" id="totalActual"></input>
+                                <span class="boldSlash">/</span>
+                                <input class="disabledInputBudgets" disabled id="totalMaxBudget"></label>
+                                <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                </div>
+        </div>
+
+        <!-- Save Button -->
+        <div class="divSaveButton">
+                <button class="saveButton">Guardar</button>
+        </div>
+
+        <!-- Links JS -->
+        <script src="https://kit.fontawesome.com/c8b2e262d7.js" crossorigin="anonymous"></script>
+        <script src="topnav.js"></script>
+        <script src="orcamentos.js"></script>
+</body>
+
+</html>
