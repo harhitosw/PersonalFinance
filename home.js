@@ -1,4 +1,4 @@
-// Variáveis globais
+// global variables
 let currencyContainer = document.getElementById("converted")
 let currency = document.getElementById("currency")
 let selectedCurrency
@@ -6,7 +6,7 @@ let euroConvert = 0
 let usdConvert = 0
 let gbpConvert = 0
 
-// Função que vai buscar os valores da moeda à API e atribui a variáveis consoante a pesquisa do utilizador
+// Function that retrieves the currency values ​​from the API and assigns them to variables depending on the user's search
 async function convert(value) {
     selectedCurrency = currency.options[currency.selectedIndex].text
 
@@ -33,14 +33,14 @@ async function convert(value) {
     }
 }
 
-// Botão que vai executar a função de converter a moeda
+// Button that will perform the function of converting the currency
 doConversion.addEventListener("click", function () {
     let valueToConvert = +document.getElementById("valueToConvert").value
     convert(valueToConvert);
 })
 
-// Verificação se o localStorage onde é guardado o saldo do utilizador existe; se existir é carregado senão é criado um novo com o valor de 0
-// Aplica cor vermnelha se estiver negativo e cor verde se estiver positivo ou 0
+// Verification that the localStorage where the user's balance is saved exists; if it exists, it is loaded otherwise a new one is created with the value of 0
+// Applies red color if it is negative and green color if it is positive or 0
 let money = 0
 if (localStorage.getItem('money')) {
 
@@ -56,7 +56,7 @@ if (localStorage.getItem('money')) {
     money;
 }
 
-// Botão que acrescenta o saldo do utilizador; verifica depois de acrescentar se o saldo está negativo ou positivo
+// Button that adds the user's balance; checks after adding if the balance is negative or positive
 btnAddMoney.addEventListener("click", function () {
 
     let mon = document.querySelector("#currentMoney").value
