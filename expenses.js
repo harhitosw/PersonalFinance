@@ -142,49 +142,53 @@ saveButton.addEventListener("click", function () {
   sum = actNet + net
   document.querySelector("#actualNet").value = sum
 
-  // Cálculo de outros gastos 
+  // Calculation of other expenses
   let otherPay = +document.querySelector("#otherPay").value
   let actOther = +document.querySelector("#actualOtherPay").value
   sum = actOther + otherPay
   document.querySelector("#actualOtherPay").value = sum
 
-  // Cálculo de gastos em farmácia
+  // Calculation of expenses in pharmacy
   let pharm = +document.querySelector("#pharm").value
   let actualPharm = +document.querySelector("#actualPharm").value
   sum = actualPharm + pharm
   document.querySelector("#actualPharm").value = sum
 
-  // Cálculo dos gastos em consultas
+  // Calculation of expenses in queries
   let doctor = +document.querySelector("#doctor").value
   let actualDoctor = +document.querySelector("#actualDoctor").value
   sum = actualDoctor + doctor
   document.querySelector("#actualDoctor").value = sum
 
-  // Cálculo de outros gastos na saúde
+  
+// Calculation of other health expenses
   let otherHealth = +document.querySelector("#otherHealth").value
   let actualOtherHealth = +document.querySelector("#actualOtherHealth").value
   sum = actualOtherHealth + otherHealth
   document.querySelector("#actualOtherHealth").value = sum
 
-  // Cálculo do combustível
+  // Fuel calculation
   let fuel = +document.querySelector("#fuel").value
   let actualFuel = +document.querySelector("#actualFuel").value
   sum = actualFuel + fuel
   document.querySelector("#actualFuel").value = sum
 
-  // Cálculo dos gastos em manutenção
+  
+// Calculation of maintenance expenses
   let maintenance = +document.querySelector("#maintenance").value
   let actualMaintenance = +document.querySelector("#actualMaintenance").value
   sum = actualMaintenance + maintenance
   document.querySelector("#actualMaintenance").value = sum
 
-  // Cálculo dos gastos em seguro
+  
+// Calculation of insurance expenses
   let insurance = +document.querySelector("#insurance").value
   let actualInsurance = +document.querySelector("#actualInsurance").value
   sum = actualInsurance + insurance
   document.querySelector("#actualInsurance").value = sum
 
-  // Cálculo dos gastos em multas
+  
+// Calculation of expenses on fines
   let carFine = +document.querySelector("#carFine").value
   let actualCarFine = +document.querySelector("#actualCarFine").value
   sum = actualCarFine + carFine
