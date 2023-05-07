@@ -3,7 +3,7 @@
 
 /* Cor de fundo */
 body {
-  background: #dafce7;
+  background: linear-gradient(to right, #44A08D, #093637);
 }
 
 /* Texto da navbar */
